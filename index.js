@@ -1,11 +1,14 @@
 const db = require("./models/")
 
+const cors = require("cors")
+
 const express = require("express")
 const app = express()
 // const bodyParser = require("body-parser")
 const PORT = process.env.PORT || 8000
 
 app.use(express.json())
+app.use(cors())
 
 function success(res, payload) {
     return res.status(200).json(payload)
